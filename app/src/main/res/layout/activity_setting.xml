@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.merryblue.myvoicealarm.ui.setting.SettingViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color242B48"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:src="@drawable/ic_back" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleSettingScreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_60sdp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:text="@string/action_settings"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_25ssp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/date_time_tittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/date_time_setting"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_16sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/clockSettingIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/clock_icon" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleClockSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_toEndOf="@id/clockSettingIcon"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/_24_hour_time"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_clock_alue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titleClockSetting"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_toEndOf="@id/clockSettingIcon"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/true_value_clock_setting"
+                android:textColor="@color/color9E9E9E"
+                android:textSize="@dimen/_13ssp" />
+
+            <Switch
+                android:id="@+id/switch_clock_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:checked="true"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/alarm_setting_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/alarm_settings"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_16sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/alarm_settingIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/vibrate_icon" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_alarm_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_toEndOf="@id/alarm_settingIcon"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/text_vibrate"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_alarm_setting_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_alarm_setting"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_toEndOf="@id/alarm_settingIcon"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/on_vpn"
+                android:textColor="@color/color9E9E9E"
+                android:textSize="@dimen/_13ssp" />
+
+            <Switch
+                android:id="@+id/switch_Alarm_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:checked="true"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rlSnooze"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_16sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon_snooze_interval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/snooze_icon" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_snooze_interval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_toEndOf="@id/icon_snooze_interval"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/snooze_interval"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSnoozeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_snooze_interval"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_toEndOf="@id/icon_snooze_interval"
+                android:fontFamily="@font/roboto_regular"
+                android:text="5 minutes"
+                android:textColor="@color/color9E9E9E"
+                android:textSize="@dimen/_13ssp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_next_snooze_interval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="@dimen/_25sdp"
+                android:src="@drawable/ic_next_white" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

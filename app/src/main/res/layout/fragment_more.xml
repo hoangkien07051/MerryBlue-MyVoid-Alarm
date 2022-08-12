@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.merryblue.myvoicealarm.ui.more.MoreViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color242B48"
+        android:orientation="vertical"
+        tools:context=".ui.addalarm.AddAlarmFragment">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llHeader"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:gravity="center_vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_weight="1"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:text="@string/voice_alarm"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:padding="@dimen/activity_horizontal_margin"
+                app:srcCompat="@drawable/ic_premium" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_setting"
+            style="@style/TextMoreScreen"
+            android:background="?actionBarItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:drawableStart="@drawable/setting_icon"
+            android:drawableEnd="@drawable/ic_next_gray"
+            android:text="@string/action_settings" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_language"
+            style="@style/TextMoreScreen"
+            android:background="?actionBarItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/language_icon"
+            android:drawableEnd="@drawable/ic_next_gray"
+            android:text="@string/title_language" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_Share"
+            style="@style/TextMoreScreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?actionBarItemBackground"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/share"
+            android:drawableEnd="@drawable/ic_next_gray"
+            android:text="@string/title_share_with_fr" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_feedback"
+            style="@style/TextMoreScreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?actionBarItemBackground"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/ic_feedback"
+            android:drawableEnd="@drawable/ic_next_gray"
+            android:text="@string/title_feedback" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_privacy"
+            style="@style/TextMoreScreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?actionBarItemBackground"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/privacy_policy"
+            android:drawableEnd="@drawable/ic_next_gray"
+            android:text="@string/privacy_polity" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_about"
+            style="@style/TextMoreScreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="?actionBarItemBackground"
+            android:drawableStart="@drawable/about"
+            android:drawableEnd="@drawable/ic_next_gray"
+            android:text="@string/title_about_app" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

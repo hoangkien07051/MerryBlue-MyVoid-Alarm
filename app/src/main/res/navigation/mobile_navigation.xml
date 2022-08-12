@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_alarms">
+
+    <fragment
+        android:id="@+id/navigation_alarms"
+        android:name="com.merryblue.myvoicealarm.ui.alarms.AlarmsFragment"
+        tools:layout="@layout/fragment_alarms" />
+
+    <fragment
+        android:id="@+id/navigation_add_alarm"
+        android:name="com.merryblue.myvoicealarm.ui.addalarm.AddAlarmFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_add_alarm">
+
+        <argument
+            android:name="data"
+            app:argType="string"
+            android:defaultValue="0" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="com.merryblue.myvoicealarm.ui.more.MoreFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_more" />
+</navigation>

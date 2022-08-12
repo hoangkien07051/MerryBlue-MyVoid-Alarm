@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/_13sdp"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvRepeat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:text="@string/text_repeat"
+        android:textColor="@color/color22313F"
+        android:textSize="@dimen/_20ssp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_repeat"
+        android:layout_below="@id/tvRepeat"
+        android:padding="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_height="wrap_content">
+        <CheckBox
+            android:id="@+id/cb_once"
+            android:text="@string/text_only_once"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/_16ssp"
+            android:layout_height="wrap_content"/>
+
+        <CheckBox
+            android:id="@+id/cb_everyday"
+            android:text="@string/text_everyday"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cb_once"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRepeat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/constraint"
+        android:layout_marginTop="@dimen/_33sdp"
+        android:background="@drawable/bg_repeat"
+        android:padding="@dimen/_12sdp"
+        tools:itemCount="7" />
+
+    <LinearLayout
+        android:id="@+id/ln"
+        android:layout_below="@id/rvRepeat"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_marginEnd="@dimen/_24sdp"
+            android:text="@string/cancel"
+            android:textColor="@color/color8D959D" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:text="@string/text_add"
+            android:textColor="@color/color6D86F1" />
+    </LinearLayout>
+
+</RelativeLayout>

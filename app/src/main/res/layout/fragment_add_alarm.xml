@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.merryblue.myvoicealarm.ui.addalarm.AddAlarmViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_splash"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:paddingBottom="@dimen/_20sdp"
+        android:paddingTop="@dimen/_5sdp"
+        tools:context=".ui.addalarm.AddAlarmFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleAlarmScreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/add_alarm"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_25ssp"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnBack" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_save"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnBack" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_height="match_parent"
+            android:layout_below="@id/titleAlarmScreen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleAlarmScreen">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleAlarmScreen"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_78sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/hours"
+                    android:textColor="@color/colorC9D3FE"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                     />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/minutes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/minute"
+                    android:textColor="@color/colorC9D3FE"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/hours"
+                    app:layout_constraintRight_toRightOf="parent"
+
+                    />
+
+                <TimePicker
+                    android:id="@+id/timePicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/bg_timepicker"
+                    android:numbersTextColor="@color/white"
+                    android:timePickerMode="spinner"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/minutes" />
+
+                <TextView
+                    android:id="@+id/tvStartAlarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:gravity="center"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="The alarm starts after : 00:00"
+                    android:textColor="@color/colorE8E8E8"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintTop_toBottomOf="@id/timePicker" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Sound"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/color9E9E9E"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvStartAlarm" />
+
+                <RelativeLayout
+                    android:id="@+id/lnProgress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_8sdp"
+                    android:background="@drawable/bg_visualizer"
+                    app:layout_constraintBottom_toBottomOf="@id/tvSound"
+                    app:layout_constraintEnd_toStartOf="@id/btnPlay"
+                    app:layout_constraintStart_toEndOf="@id/tvSound"
+                    app:layout_constraintTop_toTopOf="@id/tvSound">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btnDelete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:src="@drawable/ic_delete" />
+
+                    <com.merryblue.myvoicealarm.ui.addalarm.custom_visualizer.Visualizer
+                        android:id="@+id/progress_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:layout_toLeftOf="@id/tvTimeAudio"
+                        android:layout_toRightOf="@id/btnDelete" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTimeAudio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:paddingRight="@dimen/_5sdp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="00:06"
+                        android:textColor="@color/color6D86F1" />
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btnPlay"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:src="@drawable/ic_play"
+                    app:layout_constraintBottom_toBottomOf="@id/lnProgress"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/lnProgress"
+                    app:layout_constraintTop_toTopOf="@id/lnProgress" />
+
+                <RelativeLayout
+                    android:id="@+id/btnRecord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSound">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lottieAnim"
+                        android:layout_width="@dimen/_65sdp"
+                        android:layout_height="@dimen/_65sdp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/record_json" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_65sdp"
+                        android:layout_height="@dimen/_65sdp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="@dimen/_13sdp"
+                        android:src="@drawable/ic_record"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPressForRecord"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:text="@string/text_title_record_alarm"
+                    android:textColor="@color/color6D86F1"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintTop_toBottomOf="@id/btnRecord" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constrainLib"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPressForRecord">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imvLibrary"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:layout_marginHorizontal="@dimen/_18sdp"
+                        android:layout_marginTop="@dimen/_13sdp"
+                        android:src="@drawable/ic_library"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLibrary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_14sdp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/text_library"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16ssp"
+                        app:layout_constraintBottom_toBottomOf="@id/imvLibrary"
+                        app:layout_constraintStart_toEndOf="@id/imvLibrary"
+                        app:layout_constraintTop_toTopOf="@id/imvLibrary" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDefault"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_14sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/roboto_regular"
+                        android:maxEms="3"
+                        android:maxLines="1"
+                        android:text="@string/text_default"
+                        android:textColor="@color/color9E9E9E"
+                        android:textSize="@dimen/_16ssp"
+                        app:layout_constraintBottom_toBottomOf="@id/imvLibrary"
+                        app:layout_constraintEnd_toEndOf="@id/imvNext"
+                        app:layout_constraintTop_toTopOf="@id/imvLibrary" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imvNext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_18sdp"
+                        android:src="@drawable/ic_next_gray"
+                        app:layout_constraintBottom_toBottomOf="@id/imvLibrary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/imvLibrary" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:text="@string/text_more"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/color9E9E9E"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/constrainLib" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintRepeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="@id/constrainLib"
+                    app:layout_constraintTop_toBottomOf="@id/tvMore">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvRepeat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/text_repeat"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvEveryday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_18sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/text_everyday"
+                        android:textColor="@color/color9E9E9E"
+                        android:textSize="@dimen/_16ssp"
+                        app:layout_constraintBottom_toBottomOf="@id/tvRepeat"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvRepeat" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btnNextRepeat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:src="@drawable/ic_next_white"
+                        app:layout_constraintBottom_toBottomOf="@id/tvEveryday"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvEveryday" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginStart="@dimen/_17sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@color/color2F396"
+                    app:layout_constraintStart_toStartOf="@id/constraintRepeat"
+                    app:layout_constraintTop_toBottomOf="@id/constraintRepeat" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVibrate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/text_vibrate"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line1" />
+
+                <Switch
+                    android:id="@+id/switchAlarm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    app:layout_constraintBottom_toBottomOf="@id/tvVibrate"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line1"
+                    app:layout_constraintTop_toTopOf="@id/tvVibrate"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginStart="@dimen/_17sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@color/color2F396"
+                    app:layout_constraintStart_toStartOf="@id/tvVibrate"
+                    app:layout_constraintTop_toBottomOf="@id/tvVibrate" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/text_notes"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintStart_toStartOf="@id/tvVibrate"
+                    app:layout_constraintTop_toBottomOf="@id/line2" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btnNextNotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:src="@drawable/ic_next_white"
+                    app:layout_constraintBottom_toBottomOf="@id/tvNotes"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvNotes" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+
+
+</layout>

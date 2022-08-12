@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.merryblue.myvoicealarm">
+
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name=".ui.VoiceAlarmApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_app"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_app"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyVoiceAlarm"
+        tools:targetApi="31">
+        <activity
+            android:name=".ui.help.HelpActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <!-- <meta-data android:name="applovin.sdk.key" -->
+        <!-- android:value="v72e7JDBtEdOxRK8fK2CdRXSgBi5idZp6g8yok9wTMvcDqLTfzxWinrefv7cDg-dHdqdWAaxVLPCPWNxK2ouD8"/> -->
+        <activity
+            android:name=".ui.setting.AboutActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.setting.PrivacyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.setting.SettingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.addalarm.AddAlarmActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Splash">
+        </activity>
+        <activity
+            android:name=".ui.lockscreenalarm.ActivityLockScreenAlarm"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Draggable" />
+        <activity
+            android:name=".ui.base.MyCustomerOnboard"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Splash" />
+
+        <receiver android:name=".common.receiver.ActionReceiver" />
+        <receiver android:name=".common.receiver.AlarmBroadcastReceiver" />
+
+        <service android:name=".common.service.PlaySoundService" />
+    </application>
+
+</manifest>

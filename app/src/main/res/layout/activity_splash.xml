@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/background_splash"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivSplash"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_alarm_clock_1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:text="@string/voice_alarm"
+        android:layout_below="@id/ivSplash"
+        android:layout_marginTop="@dimen/size_image_normal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:textSize="@dimen/text_size_xlarge"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
